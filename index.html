@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rishi Verma — Software Developer & ML Enthusiast</title>
+<meta name="description" content="Portfolio of Rishi Verma, a Computer Science student at Lovely Professional University building with Python, React, Node.js, and machine learning.">
+<style>
+:root{
+  --bg:#ffffff; --fg:#0a0a0a; --muted:#737373; --muted-bg:#f5f5f5;
+  --border:#e5e5e5; --card:#ffffff; --accent:#f5f5f5; --primary:#171717;
+  --badge-bg:#eef2ff; --badge-fg:#4f46e5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5;-webkit-font-smoothing:antialiased}
+main{max-width:42rem;margin:0 auto;padding:4rem 1.5rem 2rem}
+h1{font-size:2.25rem;font-weight:700;letter-spacing:-0.025em}
+h2.big{font-size:1.875rem;font-weight:700;letter-spacing:-0.025em;text-align:center}
+p.sub{margin-top:.75rem;color:var(--muted);text-align:center}
+.hero{display:flex;flex-direction:column-reverse;gap:2rem}
+@media(min-width:640px){.hero{flex-direction:row;justify-content:space-between;align-items:flex-start} h1{font-size:3rem}}
+.hero .role{margin-top:.75rem;font-size:1.125rem;color:var(--muted)}
+.avail{margin-top:1rem;display:flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:500}
+.dot{position:relative;display:flex;height:.625rem;width:.625rem}
+.dot .ping{position:absolute;width:100%;height:100%;border-radius:9999px;background:#10b981;opacity:.6;animation:ping 1s cubic-bezier(0,0,.2,1) infinite}
+.dot .core{position:relative;height:.625rem;width:.625rem;border-radius:9999px;background:#10b981}
+@keyframes ping{75%,100%{transform:scale(2);opacity:0}}
+.clock{margin-top:.25rem;font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.btnrow{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.pillbtn{display:inline-flex;align-items:center;gap:.375rem;border:1px solid var(--border);background:var(--card);border-radius:9999px;padding:.375rem 1rem;font-size:.875rem;font-weight:500;text-decoration:none;color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.05);transition:all .2s ease}
+.pillbtn:hover{background:var(--accent);transform:translateY(-1px);box-shadow:0 3px 6px rgba(0,0,0,.08)}
+.pillbtn svg{height:1rem;width:1rem}
+.avatar{height:7rem;width:7rem;flex-shrink:0;border-radius:9999px;padding:.25rem;background:conic-gradient(#4285f4,#ea4335,#fbbc05,#34a853,#4285f4);transition:transform .3s ease;cursor:pointer;user-select:none}
+.avatar:hover{transform:scale(1.05) rotate(2deg)}
+.avatar:active{transform:scale(0.95)}
+.avatar img{height:100%;width:100%;border-radius:9999px;object-fit:cover;object-position:center 15%;display:block;pointer-events:none}
+.about{margin-top:3.5rem}
+.about h2{font-size:1.25rem;font-weight:700}
+.about p{margin-top:1rem;line-height:1.625;color:var(--muted)}
+.divider{position:relative;margin:4rem 0;display:flex;align-items:center;justify-content:center}
+.divider::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--border)}
+.divider span{position:relative;background:var(--primary);color:#fff;border-radius:9999px;padding:.375rem 1rem;font-size:.75rem;font-weight:600}
+.groupt{margin-top:2rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pills{margin-top:.75rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border);background:var(--card);border-radius:9999px;padding:.375rem .875rem;font-size:.875rem;font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,.05);transition:all .2s ease}
+.pill:hover{background:var(--accent);transform:translateY(-1px)}
+.pill img{height:1rem;width:1rem}
+.list{margin-top:2rem;display:flex;flex-direction:column;gap:1rem}
+.list a{text-decoration:none;color:inherit}
+.card{display:flex;align-items:center;gap:1rem;border:1px solid var(--border);background:var(--card);border-radius:.75rem;padding:1rem;box-shadow:0 1px 2px rgba(0,0,0,.05);transition:all .2s ease}
+a .card:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.circle{display:flex;height:3rem;width:3rem;flex-shrink:0;align-items:center;justify-content:center;border-radius:9999px;background:var(--muted-bg);font-size:1.125rem;font-weight:700;color:var(--fg);overflow:hidden}
+.circle img{width:100%;height:100%;object-fit:cover}
+.card .body{min-width:0;flex:1}
+.card .body .t{font-weight:600}
+.card .body .m{font-size:.875rem;color:var(--muted)}
+.card .years{flex-shrink:0;font-size:.875rem;color:var(--muted)}
+.projects{margin-top:2rem;display:flex;flex-direction:column;gap:2rem}
+.proj{border:1px solid var(--border);background:var(--card);border-radius:.75rem;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.05);transition:all .25s ease;display:flex;flex-direction:column}
+.proj:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.proj-img-wrap{width:100%;height:12.5rem;overflow:hidden;background:#f0f0f0;border-bottom:1px solid var(--border)}
+.proj-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.proj:hover .proj-img-wrap img{transform:scale(1.03)}
+.proj .bar{border-bottom:1px solid var(--border);background:rgba(245,245,245,.5);padding:.6rem 1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;font-size:.875rem}
+.proj .bar a{display:inline-flex;align-items:center;gap:.375rem;font-weight:500;color:var(--fg);text-decoration:none;transition:color .15s}
+.proj .bar a:hover{color:var(--primary);text-decoration:underline}
+.proj .bar svg{height:1rem;width:1rem}
+.proj .content{padding:1.25rem}
+.proj .head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.proj h3{font-weight:700;font-size:1.05rem}
+.proj .date{flex-shrink:0;font-size:.8125rem;color:var(--muted)}
+.proj p{margin-top:.5rem;font-size:.875rem;line-height:1.625;color:var(--muted)}
+.tags{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.375rem}
+.tag{background:var(--muted-bg);border-radius:.375rem;padding:.25rem .5rem;font-size:.75rem;font-weight:500}
+.viewbtn{display:inline-flex;flex-shrink:0;align-items:center;gap:.25rem;border:1px solid var(--border);border-radius:9999px;padding:.25rem .75rem;font-size:.875rem;font-weight:500;color:var(--fg);text-decoration:none;transition:all .15s ease}
+.viewbtn:hover{background:var(--accent);transform:translateX(2px)}
+.grid3{margin-top:2rem;display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:640px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.ach{border:1px solid var(--border);background:var(--card);border-radius:.75rem;padding:1rem;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.05);transition:transform .2s ease}
+.ach:hover{transform:translateY(-2px)}
+.ach svg{margin:0 auto;height:1.5rem;width:1.5rem;color:var(--muted)}
+.ach .t{margin-top:.5rem;font-size:.875rem;font-weight:600}
+.ach .m{font-size:.75rem;color:var(--muted)}
+.widecard{margin-top:1.5rem;border:1px solid var(--border);background:var(--card);border-radius:.75rem;padding:1rem;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.widecard .t{font-size:.875rem;font-weight:600}
+.widecard p{margin-top:.25rem;font-size:.875rem;color:var(--muted)}
+.contactrow{margin-top:2rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
+.iconrow{margin-top:1.25rem;display:flex;justify-content:center;gap:1rem}
+.iconbtn{border:1px solid var(--border);background:var(--card);border-radius:9999px;padding:.625rem;color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.05);transition:all .2s ease;display:inline-flex}
+.iconbtn:hover{background:var(--accent);transform:translateY(-2px)}
+.iconbtn svg{height:1.25rem;width:1.25rem}
+form.contact{margin-top:2rem;border:1px solid var(--border);background:var(--card);border-radius:.75rem;padding:1.5rem;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.frow{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:640px){.frow{grid-template-columns:1fr 1fr}}
+.fgroup{margin-bottom:1rem}
+label{font-size:.875rem;font-weight:500;display:block}
+input,textarea{margin-top:.375rem;width:100%;border:1px solid var(--border);background:var(--bg);border-radius:.375rem;padding:.5rem .75rem;font-size:.875rem;font-family:inherit;color:var(--fg);transition:border-color .15s}
+input:focus,textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 1px var(--primary)}
+.submit{width:100%;background:var(--primary);color:#fff;border:none;border-radius:.375rem;padding:.625rem 1rem;font-size:.875rem;font-weight:500;cursor:pointer;transition:opacity .15s}
+.submit:hover{opacity:.9}
+footer{margin-top:4rem;border-top:1px solid var(--border);padding-top:2rem;padding-bottom:1rem;text-align:center;font-size:.875rem;color:var(--muted)}
+svg{display:inline-block;vertical-align:middle}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:42rem;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-brand{font-weight:700;font-size:1rem;text-decoration:none;color:var(--fg);letter-spacing:-.01em}
+.nav-links{display:flex;gap:1.25rem;list-style:none}
+.nav-links a{font-size:.875rem;color:var(--muted);text-decoration:none;transition:color .15s;position:relative}
+.nav-links a:hover{color:var(--fg)}
+.nav-links a.active{color:var(--fg);font-weight:600}
+.nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:.5rem;padding:.4rem .6rem;font-size:1rem;line-height:1;cursor:pointer;color:var(--fg)}
+@media(max-width:640px){
+  .nav-toggle{display:block}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--border);padding:.5rem 0}
+  .nav-links.open{display:flex}
+  .nav-links a{display:block;padding:.65rem 1rem;font-size:.95rem}
+  section{scroll-margin-top:4rem}
+}
+section{scroll-margin-top:4.5rem}
+@media(max-width:640px){
+  h1{font-size:2.25rem}
+  .hero .role{font-size:1rem}
+  .contact input,.contact textarea{font-size:16px}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand">Rishi Verma</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div>
+      <h1>Hi, I'm Rishi Verma</h1>
+      <p class="role">Software Developer &bull; ML Enthusiast</p>
+      <p class="avail"><span class="dot"><span class="ping"></span><span class="core"></span></span> Available for work</p>
+      <p class="clock" id="clock">&nbsp;</p>
+      <div class="btnrow">
+        <a class="pillbtn" href="https://github.com/rishiverma911" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          GitHub
+        </a>
+        <a class="pillbtn" href="https://www.linkedin.com/in/rishi-verma-b0351937a/" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="pillbtn" href="./Rishi_CV.pdf" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          Resume
+        </a>
+      </div>
+    </div>
+    <div class="avatar" id="avatarTrigger" title="Click to cycle through my profiles & contact">
+      <img src="./Rishi.jpeg" alt="Rishi Verma">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>I'm a computer science student at Lovely Professional University who enjoys understanding how things work — from machine learning models to full-stack web applications. Most of my time goes into exploring Python, deep learning, and backend logic, and I like breaking down complex problems into simple, logical solutions. I'm interested in writing clean code, training models that actually perform, and continuously improving how I design and build software.</p>
+  </section>
+
+  <!-- Skills -->
+  <div class="divider"><span>Skills</span></div>
+  <section id="skills">
+    <h2 class="big">What I work with</h2>
+    <p class="sub">Technologies and tools I use to build software.</p>
+    <h3 class="groupt">Programming Languages</h3>
+    <div class="pills">
+      <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" loading="lazy">Python</span>
+      <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="" loading="lazy">C</span>
+      <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy">JavaScript</span>
+      <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" loading="lazy">HTML</span>
+    </div>
+    <h3 class="groupt">Frameworks &amp; Libraries</h3>
+    <div class="pills">
+      <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" loading="lazy">Node.js</span>
+      <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy">React</span>
+      <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="" loading="lazy">NumPy</span>
+      <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="" loading="lazy">Matplotlib</span>
+      <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="" loading="lazy">TensorFlow</span>
+    </div>
+    <h3 class="groupt">Databases</h3>
+    <div class="pills">
+      <span class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" loading="lazy">MongoDB</span>
+    </div>
+    <h3 class="groupt">Soft Skills</h3>
+    <div class="pills">
+      <span class="pill">Time Management</span>
+      <span class="pill">Adaptability</span>
+      <span class="pill">Analytical Thinking</span>
+      <span class="pill">Problem Solving</span>
+      <span class="pill">Leadership</span>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <div class="divider"><span>Education</span></div>
+  <section id="education">
+    <h2 class="big">My Academic Background</h2>
+    <p class="sub">Where I studied and the degrees I earned.</p>
+    <div class="list">
+      <a href="https://lpu.in/" target="_blank" rel="noreferrer">
+        <div class="card">
+          <div class="circle">
+            <img src="https://www.google.com/s2/favicons?domain=lpu.in&sz=128" alt="LPU Logo" onerror="this.parentNode.innerHTML='L'">
+          </div>
+          <div class="body">
+            <p class="t">Lovely Professional University</p>
+            <p class="m">B.Tech in Computer Science and Engineering</p>
+            <p class="m">CGPA: 9.35</p>
+          </div>
+          <span class="years">2025 – 2029</span>
+        </div>
+      </a>
+      <a href="http://www.lyceumis.net.in/" target="_blank" rel="noreferrer">
+        <div class="card">
+          <div class="circle">
+            <img src="https://www.google.com/s2/favicons?domain=lyceumis.net.in&sz=128" alt="LYCEUM Logo" onerror="this.parentNode.innerHTML='L'">
+          </div>
+          <div class="body">
+            <p class="t">LYCEUM International School</p>
+            <p class="m">Senior Secondary (Class XII)</p>
+            <p class="m">Percentage: 78.8%</p>
+          </div>
+          <span class="years">2024 – 2025</span>
+        </div>
+      </a>
+      <a href="https://gdmis.in/" target="_blank" rel="noreferrer">
+        <div class="card">
+          <div class="circle">
+            <img src="https://www.google.com/s2/favicons?domain=gdmis.in&sz=128" alt="GDMIS Logo" onerror="this.parentNode.innerHTML='G'">
+          </div>
+          <div class="body">
+            <p class="t">G.D. Mother International School</p>
+            <p class="m">Secondary (Class X)</p>
+            <p class="m">Percentage: 90.4%</p>
+          </div>
+          <span class="years">2022 – 2023</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <div class="divider"><span>My Projects</span></div>
+  <section id="projects">
+    <h2 class="big">Check out my latest work</h2>
+    <p class="sub">From machine learning experiments to full-stack applications — here are a few of my favorites.</p>
+    <div class="projects">
+      <article class="proj">
+        <div class="proj-img-wrap">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80" alt="ANN vs CNN Project Preview" loading="lazy">
+        </div>
+        <div class="bar">
+          <a href="https://github.com/rishiverma911/ANN-vs-CNN" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            Source
+          </a>
+          <a href="https://github.com/rishiverma911/ANN-vs-CNN" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+        </div>
+        <div class="content">
+          <div class="head"><h3>ANN vs CNN – Image Classification Analysis</h3><span class="date">Aug 2026</span></div>
+          <p>A machine learning project comparing the performance of Artificial Neural Networks (ANN) and Convolutional Neural Networks (CNN) on image classification tasks — training and evaluating both models, then visualizing metrics to identify the strengths and limitations of each architecture.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Matplotlib</span><span class="tag">NumPy</span></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="GradeMatrix Project Preview" loading="lazy">
+        </div>
+        <div class="bar">
+          <a href="https://github.com/rishiverma911/GradeMatrix" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            Source
+          </a>
+          <a href="https://github.com/rishiverma911/GradeMatrix" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live Demo
+          </a>
+        </div>
+        <div class="content">
+          <div class="head"><h3>GradeMatrix – Academic Performance Tracker</h3><span class="date">Jun 2026</span></div>
+          <p>A full-stack student result management system for automated grade, GPA/CGPA calculation and academic performance tracking, with secure role-based authentication and CRUD operations for students, courses and examination records.</p>
+          <div class="tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <div class="divider"><span>Certificates</span></div>
+  <section id="certificates">
+    <h2 class="big">Certificates</h2>
+    <p class="sub">Courses and certifications I've completed.</p>
+    <div class="list">
+      <div class="card">
+        <div class="circle">
+          <img src="https://www.google.com/s2/favicons?domain=infosys.com&sz=128" alt="Infosys Icon" onerror="this.parentNode.innerHTML='I'">
+        </div>
+        <div class="body">
+          <p class="t">Introduction to Artificial Intelligence</p>
+          <p class="m">Infosys &middot; March 2026</p>
+        </div>
+        <a class="viewbtn" href="https://verify.onwingspan.com/" target="_blank" rel="noreferrer">View
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height:.875rem;width:.875rem"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        </a>
+      </div>
+      <div class="card">
+        <div class="circle">
+          <img src="https://www.google.com/s2/favicons?domain=saylor.org&sz=128" alt="Saylor Icon" onerror="this.parentNode.innerHTML='S'">
+        </div>
+        <div class="body">
+          <p class="t">CS105: Introduction to Python</p>
+          <p class="m">Saylor Academy &middot; February 2026</p>
+        </div>
+        <a class="viewbtn" href="https://learn.saylor.org/mod/coursecertificate/view.php?id=59017" target="_blank" rel="noreferrer">View
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="height:.875rem;width:.875rem"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beyond Code -->
+  <div class="divider"><span>Beyond Code</span></div>
+  <section id="achievements">
+    <h2 class="big">Achievements &amp; Activities</h2>
+    <p class="sub">A few things I've done outside the editor.</p>
+    <div class="grid3">
+      <div class="ach">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        <p class="t">Silver medal in skipping</p>
+        <p class="m">District level &middot; 2018</p>
+      </div>
+      <div class="ach">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>
+        <p class="t">Cybersecurity awareness</p>
+        <p class="m">Aware 30 people on staying safe online &middot; 2026</p>
+      </div>
+      <div class="ach">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m9 21 3-3 3 3"/></svg>
+        <p class="t">Science exhibition</p>
+        <p class="m">Managed the event in secondary school &middot; 2022</p>
+      </div>
+    </div>
+    <div class="widecard">
+      <p class="t">Training — AI/ML Basics</p>
+      <p>Completed structured training covering fundamental concepts of Artificial Intelligence and Machine Learning, with hands-on guided tasks and projects &middot; Jun – Sep 2026</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <div class="divider"><span>Contact</span></div>
+  <section id="contact">
+    <h2 class="big">Get in Touch</h2>
+    <p class="sub">Have a project in mind or just want to say hi? My inbox is always open.</p>
+    <div class="contactrow">
+      <a class="pillbtn" href="mailto:rishipd4278@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        rishipd4278@gmail.com
+      </a>
+      <a class="pillbtn" href="tel:+917004658844">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +91 70046 58844
+      </a>
+      <span class="pillbtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        LPU, Phagwara, Punjab
+      </span>
+    </div>
+    <div class="iconrow">
+      <a class="iconbtn" href="https://github.com/rishiverma911" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+      </a>
+      <a class="iconbtn" href="https://www.linkedin.com/in/rishi-verma-b0351937a/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <form class="contact" id="contactForm">
+      <div class="frow">
+        <div class="fgroup">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" required>
+        </div>
+        <div class="fgroup">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+      </div>
+      <div class="fgroup">
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" required>
+      </div>
+      <div class="fgroup">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Rishi Verma. Built with HTML, CSS &amp; JavaScript.</p>
+  </footer>
+</main>
+
+<script>
+function tick(){
+  var el=document.getElementById('clock');
+  el.textContent=new Date().toLocaleString('en-GB',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
+}
+tick();setInterval(tick,1000);
+
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target;
+  var body=encodeURIComponent(f.message.value+"\n\n— "+f.name.value+" ("+f.email.value+")");
+  window.location.href="mailto:rishipd4278@gmail.com?subject="+encodeURIComponent(f.subject.value)+"&body="+body;
+});
+
+const navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');
+if(navToggle){
+  navToggle.addEventListener('click',()=>{
+    const open=navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded',open);
+  });
+}
+if(navLinks){
+  navLinks.addEventListener('click',e=>{
+    if(e.target.tagName==='A'){
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded','false');
+    }
+  });
+}
+
+const sections = document.querySelectorAll('section');
+const navItems = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 100) {
+      current = section.getAttribute('id');
+    }
+  });
+  navItems.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === `#${current}`) {
+      a.classList.add('active');
+    }
+  });
+});
+
+const avatarTrigger = document.getElementById('avatarTrigger');
+const contactTargets = [
+  { url: 'https://www.linkedin.com/in/rishi-verma-b0351937a/', target: '_blank' },
+  { url: 'https://github.com/rishiverma911', target: '_blank' },
+  { url: 'mailto:rishipd4278@gmail.com', target: '_self' },
+  { url: 'tel:+917004658844', target: '_self' }
+];
+let targetIndex = 0;
+
+if(avatarTrigger){
+  avatarTrigger.addEventListener('click', () => {
+    const item = contactTargets[targetIndex];
+    if(item.target === '_blank'){
+      window.open(item.url, '_blank');
+    } else {
+      window.location.href = item.url;
+    }
+    targetIndex = (targetIndex + 1) % contactTargets.length;
+  });
+}
+</script>
+</body>
+</html>
